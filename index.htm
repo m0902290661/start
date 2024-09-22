@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起始頁面</title>
+    <style>
+        .header{
+            text-align: center;
+            margin-top: 150px;
+        }
+        .header input{
+            text-decoration: none;
+            height: 30px;
+            width: 75%;
+            border: 0.5px solid black;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            padding: 5px;
+            font-size: 20px;
+            padding-left: 60px;
+        }
+        .button{
+            text-align: center;
+        }
+        .button button{
+            margin: 15px;
+            border: 0.5px solid black;
+            border-radius: 50px;
+            font-size: 20px;
+            padding: 15px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .out{
+            width: 70%;
+            height: 150px;
+        }
+        .footer{
+            margin-left: 15px;
+            text-align: center;
+        }
+        .header button{
+            height: 34px;
+            width: 34px;
+            border: 0.5px solid black;
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class=".body">
+    <div class="header">
+        <h1>許元洧的起始頁面</h1>
+        <input type="text" placeholder="在這裡執行google查詢" class="in">
+        <button onclick="e()">⏎</button>
+    </div>
+    <div class="button">
+        <button onclick="location.href='https://www.youtube.com'">YT</button>
+        <button onclick="location.href='https://docs.google.com/document/u/0/'">文件</button>
+        <button onclick="location.href='https://docs.google.com/spreadsheets/u/0/'">試算表</button>
+        <button onclick="location.href='https://docs.google.com/presentation/u/0/'">簡報</button>
+        <button onclick="location.href='https://drive.google.com/drive/u/0/home'">雲端</button>
+        <button onclick="location.href='https://www.roblox.com/home'">Roblox</button>
+    </div>
+    <div class="footer">
+        <textarea id="out" class="out">
+程式輸出：
+        </textarea>
+        <p>最後更新日期：2024/09/21/10:13pm +8</p>
+    </div>
+    <script>
+        const s = document.querySelector('.in');
+        const o = document.querySelector('.out');
+        const k = document.querySelector('body');
+
+        k.addEventListener('keyup',function(e){
+            const ek = e.key;
+            o.innerHTML=ek;
+        })
+        s.addEventListener('keyup', function(e){
+            if (e.key === "Enter"){
+                location.href='https://www.google.com/search?q='+(s.value);
+            }
+        })
+        function e(){
+            location.href='https://www.google.com/search?q='+(s.value);
+        }
+    </script>
+</body>
+</html>
