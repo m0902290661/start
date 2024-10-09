@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>許元洧出遊</title>
+    <style>
+        .main{
+            height: 300px;
+            width: 85%;
+            border: 1px solid black;
+            border-radius: 15px;
+        }
+        .main textarea{
+            margin: 15px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="singin">請登入：<input type="password" placeholder="輸入密碼" id="pi"><input type="button" value="送出" onclick="singin()"></h1>
+    <div class="main">
+        <textarea id="out">請先登入</textarea>
+    </div>
+
+    <script>
+        function singin(){
+            const pi = document.getElementById('pi');
+            const pw = '990607';
+            const ip = pi.value;
+            const singin = document.getElementById('singin');
+            const out = document.getElementById('out');
+            if(pw===ip){
+                singin.innerHTML='許元洧出遊現況';
+                out.innerHTML='已登入。密碼：990607。許元洧出遊現況：尚未出發       時間：10/12     行程：台北車站—>台中高鐵站—>台中高鐵捷運綠線站—>趙常有家—>隨意逛—>更多—>台中車站—>二水車站—>結束：）';
+                out.style.width='80%';
+                out.style.height='250px';
+            }else{
+                out.innerHTML='密碼不正確。'
+            }
+        }
+    </script>
+</body>
+</html>
